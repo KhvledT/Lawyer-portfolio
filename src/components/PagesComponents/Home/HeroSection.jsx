@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Award } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroImage from '../../../assets/imgs/heroImage.jpeg';
 import { getPageData, getCommonData } from '../../../data';
@@ -39,7 +39,16 @@ const HeroSection = () => {
                 dir={direction}
               >
                 {buttonData.scheduleConsultation}
-                <ArrowRight className={`w-5 h-5 ${getIconAlignment(language, 'end')}`} />
+                {language === `AR`
+                ?
+                <>
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                </>
+                :
+                <>
+                <ArrowRight className="w-4 h-4 ml-2" />
+                </>
+                }
               </Link>
               <Link 
                 to="/services" 

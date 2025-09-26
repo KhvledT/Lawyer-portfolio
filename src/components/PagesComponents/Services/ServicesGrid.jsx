@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Lightbulb, Users, FileText, Gavel, Shield, ArrowRight, CheckCircle } from 'lucide-react';
+import { Building2, Lightbulb, Users, FileText, Gavel, Shield, ArrowRight, CheckCircle, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getPageData, getCommonData } from '../../../data';
 import { useLanguage } from '../../../contexts/LanguageContext';
@@ -52,7 +52,17 @@ const ServicesGrid = () => {
                   to="/about" 
                   className="inline-flex items-center text-[var(--primary-gold)] font-semibold hover:text-[var(--accent-blue)] hover:translate-x-1 transition-all duration-300"
                 >
-                  {servicesData.getStarted} <ArrowRight className="w-4 h-4 ml-2" />
+                  {servicesData.getStarted}
+                  {language === `AR` 
+                  ?
+                  <>
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  </>
+                  :
+                  <>
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                  </>
+                  }
                 </Link>
               </div>
             </motion.div>

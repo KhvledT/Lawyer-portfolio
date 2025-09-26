@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getPageData } from '../../../data';
 import { useLanguage } from '../../../contexts/LanguageContext';
@@ -30,7 +30,16 @@ const ServicesCTA = () => {
             className="inline-flex items-center bg-[var(--primary-gold)] text-[var(--primary-navy)] px-10 py-4 rounded-lg font-semibold text-lg hover:bg-[var(--accent-blue)] hover:text-white transition-all duration-300"
           >
             {ctaData.buttonText}
+            {language === `AR` 
+            ?
+            <>
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            </>
+            :
+            <>
             <ArrowRight className="w-5 h-5 ml-2" />
+            </>
+          }
           </Link>
         </motion.div>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getPageData, getCommonData } from '../../../data';
 import { useLanguage } from '../../../contexts/LanguageContext';
@@ -44,7 +44,19 @@ const PracticeAreasSection = () => {
                 to="/services" 
                 className="inline-flex items-center text-[var(--primary-gold)] font-semibold hover:text-[var(--accent-blue)] hover:translate-x-1 transition-all duration-300 mt-4"
               >
-                {practiceAreasData.learnMore} <ArrowRight className="w-4 h-4 ml-2" />
+                  {language ===`AR`
+                  ?
+                    <>
+                    {practiceAreasData.learnMore}
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    </>
+                  :
+                    <>
+                    {practiceAreasData.learnMore}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                    </>
+                  }
+
               </Link>
             </motion.div>
           ))}
