@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { getPageData, getCommonData } from '../../../data';
+import { getPageData } from '../../../data';
 import { useLanguage } from '../../../contexts/LanguageContext';
 
 const CTASection = () => {
@@ -31,8 +31,18 @@ const CTASection = () => {
             to="/about" 
             className="inline-flex btn btn-primary items-center"
           >
-            {ctaData.buttonText}
-            <ArrowRight className="w-5 h-5 ml-2" />
+            {language === `AR`
+            ? 
+              <>
+              <ArrowRight className="w-5 h-5 ml-2" />
+              {ctaData.buttonText}
+              </>
+            : 
+              <>
+              {ctaData.buttonText}
+              <ArrowRight className="w-5 h-5 ml-2" />
+              </>
+            }
           </Link>
         </motion.div>
       </div>

@@ -45,7 +45,7 @@ const CredentialsSection = () => {
               <h3 className="text-2xl font-bold text-[var(--primary-navy)] mb-6">{credential.title}</h3>
               <ul className="space-y-3 text-left">
                 {credential.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-start gap-3 text-[var(--medium-gray)]">
+                  <li key={itemIndex} className="flex items-start rtl-text gap-3 text-[var(--medium-gray)]">
                     <span className="text-[var(--primary-gold)] font-bold mt-1">•</span>
                     <span>{item}</span>
                   </li>

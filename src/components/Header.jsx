@@ -43,7 +43,10 @@ const Header = () => {
     >
       <div className="container px-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 text-[var(--primary-navy)] font-bold text-xl">
+          <Link 
+            to="/" 
+            className="flex items-center gap-3 text-[var(--primary-navy)] font-bold text-xl"
+          >
             <Scale className="w-8 h-8 text-[var(--primary-gold)]" />
             <span>{navData.companyName}</span>
           </Link>
@@ -53,14 +56,14 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`font-medium transition-colors relative ${
+                className="font-medium transition-colors relative"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span className={`${
                   location.pathname === item.path 
                     ? 'text-[var(--primary-navy)]' 
                     : 'text-gray-600 hover:text-[var(--primary-navy)]'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
+                }`}>{item.label}</span>
                 {location.pathname === item.path && (
                   <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[var(--primary-gold)]"></div>
                 )}
@@ -69,7 +72,7 @@ const Header = () => {
             <LanguageToggle />
             <Link 
               to="/about" 
-              className="ml-4 btn btn-primary items-center"
+              className="btn btn-primary items-center ml-4"
             >
               {navData.contact}
             </Link>

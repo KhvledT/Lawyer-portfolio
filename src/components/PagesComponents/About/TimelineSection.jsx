@@ -28,7 +28,7 @@ const TimelineSection = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-[var(--primary-gold)]"></div>
+            <div className={`absolute ${language === 'AR' ? 'right-8' : 'left-8'} top-0 bottom-0 w-0.5 bg-[var(--primary-gold)]`}></div>
             <div className="space-y-12">
               {timeline.map((item, index) => (
                 <motion.div

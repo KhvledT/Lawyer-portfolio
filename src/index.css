@@ -26,6 +26,98 @@ body {
   background-color: var(--white);
 }
 
+/* RTL Support */
+.rtl {
+  direction: rtl;
+}
+
+/* RTL Text Alignment */
+.rtl .rtl-text {
+  text-align: right;
+}
+
+.rtl .rtl-text.center-text {
+  text-align: center;
+}
+
+.rtl .btn-content {
+  display: flex;
+  align-items: center;
+}
+
+.rtl .btn-content .icon-left {
+  order: 1;
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+.rtl .btn-content .icon-right {
+  order: -1;
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+.rtl .flex-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rtl .content-icon {
+  order: 1;
+}
+
+.rtl .content-icon + div {
+  order: 2;
+}
+
+.rtl .content-text {
+  text-align: right;
+}
+
+.rtl .flex-reverse {
+  flex-direction: row-reverse;
+}
+
+/* LTR (English) Text Alignment */
+.ltr .ltr-text {
+  text-align: left;
+}
+
+.ltr .center-text {
+  text-align: center;
+}
+
+.ltr .btn-content .icon-left {
+  order: 1;
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+.ltr .btn-content .icon-right {
+  order: 2;
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+.ltr .flex-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ltr .content-icon {
+  order: 1;
+}
+
+.ltr .content-icon + div {
+  order: 2;
+}
+
+.ltr .content-text {
+  text-align: left;
+}
+
 .App {
   min-height: 100vh;
   display: flex;
